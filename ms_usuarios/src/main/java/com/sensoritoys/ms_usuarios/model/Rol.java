@@ -1,6 +1,13 @@
 package com.sensoritoys.ms_usuarios.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "roles")
@@ -13,7 +20,7 @@ public class Rol {
     @Column(nullable = false, unique = true)
     private NombreRol nombre;
 
-    // Constructor vacío requerido por JPA
+    // Constructor vacío 
     public Rol() {}
 
     // Constructor con parámetros para los tests
@@ -22,7 +29,7 @@ public class Rol {
         this.nombre = nombre;
     }
 
-    // Getters y Setters
+    // Getters y setters
     public Long getId() {
         return id;
     }

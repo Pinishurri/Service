@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sensoritoys.ms_productos.dto.StockDashboardDTO;
 import com.sensoritoys.ms_productos.model.Producto;
 import com.sensoritoys.ms_productos.service.ProductoService;
 
@@ -53,5 +54,9 @@ public class ProductoController {
     public ResponseEntity<Void> eliminar(@PathVariable Long id) {
         productoService.eliminarProducto(id);
         return ResponseEntity.noContent().build();
+    }
+    @GetMapping("/dashboard/stock")
+    public ResponseEntity<List<StockDashboardDTO>> obtenerDashboardStock() {
+        return ResponseEntity.ok(productoService.obtenerDashboardStock());
     }
 }

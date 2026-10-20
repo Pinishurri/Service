@@ -54,7 +54,7 @@ public class Usuario {
         this.rol = rol;
     }
 
-    // Getters y Setters explícitos (Adiós a las líneas amarillas en VS Code)
+    // getters y setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
